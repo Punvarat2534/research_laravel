@@ -52,7 +52,7 @@ $(document).ready(function() {
   <br><br>
   <div style="width:100%;border:1px solid #ccc;overflow-x:scroll;height:1000px;">
   <center>
-  @for ($i = 0; $i < 10; $i++)
+  @foreach($activity as $activity)
     <div class="box" style="width:95%;border:1px solid #999;margin:10px;padding:0;">
         <table style="width:100%;cursor:pointer;">
           <tr>
@@ -90,7 +90,7 @@ $(document).ready(function() {
         </table>
 
     </div>
-  @endfor
+  @endforeach
 </center>
 </div>
 
