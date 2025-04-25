@@ -64,11 +64,11 @@ $(document).ready(function() {
               <table style="width:100%;font-size:10pt;">
               <tr>
                 <th style="width:30%;"><i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;ประเภท :</th>
-                <td>e-Learning  &nbsp;&nbsp;<b>จำนวนเปิดรับ :</b> ไม่จำกัด</td>
+                <td>e-Learning  &nbsp;&nbsp;<b>จำนวนเปิดรับ :</b> </td>
               </tr>
               <tr>
                 <th><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;วันที่จัดกิจกรรม :</th>
-                <td>1 ม.ค. 2563 เวลา 00:00 น. - 31 ม.ค. 2576 เวลา 00:00 น. </td>
+                <td>{{$activity->date_start}} น. - 31 ม.ค. 2576 เวลา 00:00 น. </td>
               </tr>
               <tr>
                 <th><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;วันที่รับสมัคร :</th>
