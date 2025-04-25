@@ -65,7 +65,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
+            'url' => env('mysql://CLICK_TO:REVEAL_PASSWORD@mysql-35407e96-punvarat-7a2d.l.aivencloud.com:22067/defaultdb?ssl-mode=REQUIRED'),
             'host' => env('DB_HOST', 'mysql-35407e96-punvarat-7a2d.l.aivencloud.com'),
             'port' => env('DB_PORT', '22067'),
             'database' => env('DB_DATABASE', 'psuresearch'),
