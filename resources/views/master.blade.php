@@ -58,10 +58,8 @@ $(document).ready(function() {
           <tr>
             
             <td style="width:80%;color:black;padding:1em;">
-             <span style="font-size:18pt;"><b>หลักสูตร Digital Transformation</b></span> 
-             <br><br><span style="font-size:10pt;">ทรานส์ฟอร์เมชัน (Digital Transformation) คือกระบวนการที่นำเอาดิจิทัล เทคโนโลยี มาปรับใช้กับทุกส่วนของธุรกิจ 
-             ตั้งแต่รากฐานกระบวนการทำงาน การสร้างสรรค์ผลิตภัณฑ์ การตลาด วัฒนธรรมองค์กร และการกำหนดเป้าหมายการเติบโตในอนาคต 
-             เพื่อให้ธุรกิจปรับตัวต่อการเปลี่ยนแปลงได้อย่างรวดเร็ว</span> 
+             <span style="font-size:18pt;"><b>{{$activity->title}}</b></span> 
+             <br><br><span style="font-size:10pt;">{{print($activity->short_detail)}}</span> 
              <br> <br>
               <table style="width:100%;font-size:10pt;">
               <tr>
