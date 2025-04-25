@@ -34,25 +34,44 @@ class AuthController extends Controller
         return view('backend.admin', $data);
     }
 
-    public function redirectToGoogle()
+    public function redirect()
     {
         return Socialite::driver('google')->redirect();
     }
 
-
-    public function handleGoogleCallback()
+    /**
+     * Handle the callback from Google.
+     */
+    public function callback()
     {
-        $googleUser = Socialite::driver('google')->stateless()->user();
-        $user = User::where('email', $googleUser->email)->first();
-        if(!$user)
-        {
-            echo $googleUser->name;
-            //$user = User::create(['name' => $googleUser->name, 'email' => $googleUser->email, 'password' => \Hash::make(rand(100000,999999))]);
+        try {
+            // Get the user information from Google
+            $user = Socialite::driver('google')->user();
+            echo $user->email;
+        } catch (Throwable $e) {
+            return redirect('/')->with('error', 'Google authentication failed.');
         }
 
-        //Auth::login($user);
+       /* // Check if the user already exists in the database
+        $existingUser = User::where('email', $user->email)->first();
 
-        //return redirect(RouteServiceProvider::HOME);
+        if ($existingUser) {
+            // Log the user in if they already exist
+            Auth::login($existingUser);
+        } else {
+            // Otherwise, create a new user and log them in
+            $newUser = User::updateOrCreate([
+                'email' => $user->email
+            ], [
+                'name' => $user->name,
+                'password' => bcrypt(Str::random(16)), // Set a random password
+                'email_verified_at' => now()
+            ]);
+            Auth::login($newUser);
+        }
+
+        // Redirect the user to the dashboard or any other secure page
+       // return redirect('/dashboard');*/
     }
 
 

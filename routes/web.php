@@ -20,8 +20,8 @@ Route::get('/admin', [AuthController::class, 'admin']);
 
 Route::get('/atvdetail', [ActivityController::class, 'activity_detail']);
 
-Route::get('/google/redirect', [AuthController::class, 'redirectToGoogle']);
-Route::get('/google/callback', [AuthController::class, 'handleGoogleCallback']);
+Route::get('/google/redirect', [AuthController::class, 'redirect']);
+Route::get('/google/callback', [AuthController::class, 'callback']);
 
 Route::get('/sendmail', [ActivityController::class, 'sendmail']);
 Route::get('/activity-created', [ActivityController::class, 'create']);
