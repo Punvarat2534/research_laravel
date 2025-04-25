@@ -70,7 +70,7 @@ return [
             'port' => env('DB_PORT', '22067'),
             'database' => env('DB_DATABASE', 'psuresearch'),
             'username' => env('DB_USERNAME', 'avnadmin'),
-            'password' => env('DB_PASSWORD', ''),
+            'password' => env('DB_PASSWORD', 'AVNS_5-0MqQ1w4r2AXoz5aRj'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
