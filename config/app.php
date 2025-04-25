@@ -182,6 +182,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+        'GoogleAuth' => Lcmaquino\GoogleOAuth2\Facades\GoogleOAuth2::class,
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 

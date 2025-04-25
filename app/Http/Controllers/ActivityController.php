@@ -9,6 +9,8 @@ use App\Article;
 use App\Mail\sendmail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Activity;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class ActivityController extends Controller
 {

@@ -34,45 +34,17 @@ class AuthController extends Controller
         return view('backend.admin', $data);
     }
 
-    public function redirect()
-    {
-        return Socialite::driver('google')->redirect();
-    }
-
-    /**
-     * Handle the callback from Google.
-     */
-    public function callback()
-    {
-        try {
-            // Get the user information from Google
-            $user = Socialite::driver('google')->user();
-            echo $user->email;
-        } catch (Throwable $e) {
-            return redirect('/')->with('error', 'Google authentication failed.');
+    public function redirectToGoogle(){
+        return Socialite::driver('google')->stateless()->redirect();
         }
-
-       /* // Check if the user already exists in the database
-        $existingUser = User::where('email', $user->email)->first();
-
-        if ($existingUser) {
-            // Log the user in if they already exist
-            Auth::login($existingUser);
-        } else {
-            // Otherwise, create a new user and log them in
-            $newUser = User::updateOrCreate([
-                'email' => $user->email
-            ], [
-                'name' => $user->name,
-                'password' => bcrypt(Str::random(16)), // Set a random password
-                'email_verified_at' => now()
-            ]);
-            Auth::login($newUser);
+        
+        //Google callback  
+        public function handleGoogleCallback(){
+        
+        $user = Socialite::driver('google')->stateless()->user();
+        
+          $this->_registerorLoginUser($user);
+          return redirect()->route('home');
         }
-
-        // Redirect the user to the dashboard or any other secure page
-       // return redirect('/dashboard');*/
-    }
-
 
 }
